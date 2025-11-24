@@ -6,19 +6,19 @@ class Armstrong{
     private:
     int number;
     public:
-    Armstrong(int num) : number(num) {}
+    Armstrong(int num) : number(num) {} // constructor to initialize number
 
     bool isArmstrong(){
-        int sum = 0, temp, remainder, digits = 0;
+        int sum = 0, temp, remainder, digits = 0; // initialize variables
         temp = number;
 
-        while(temp != 0){
+        while(temp != 0){ //counting digits
             digits++;
             temp /= 10;
         }
 
         temp = number;
-        while(temp != 0){
+        while(temp != 0){ // calculating sum of digits raised to the power of number of digits ex: 153 = 1^3 + 5^3 + 3^3
             remainder = temp % 10;
             sum += pow(remainder, digits);
             temp /= 10;
@@ -36,7 +36,7 @@ int main() {
     cout << "Enter a positive integer: ";
     cin >> num;
 
-    Armstrong obj(num);
+    Armstrong obj(num); // create object of Armstrong class
     if(obj.isArmstrong()){
         cout << num << " is an Armstrong number." << endl;
     }else{
